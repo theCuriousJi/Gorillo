@@ -15,3 +15,56 @@
 
 @import "bootstrap";
 @import "font-awesome";
+body{
+  background-color: rgb(14, 116, 175)
+}
+
+.list{
+  float: left;
+  color: black;
+  background-color: #e2e4e6;
+  margin: 20px;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.board-item{
+  float: left;
+  list-style-type: none;
+  color: red;
+  margin: 20px;
+  height: 100px;
+  width: 100px;
+  background-color: #e2e4e6;
+  border: solid thin black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 3px;
+}
+
+.board-item > button {
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  background-color: lightblue;
+  left: 50%;
+  transform: translateX(-50%);
+  // display:none
+}
+.board-item > button:hover {
+  // display: block;
+  background-color: blue;
+}
+
+a{
+  font-size: 16px;
+  color: black
+}
+
+.clearfix {
+  overflow: auto;
+  font-size: 5px;
+}
