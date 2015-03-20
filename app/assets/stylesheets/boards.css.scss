@@ -1,0 +1,39 @@
+.board-index{
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.board-list{
+    display: inline-block;
+}
+
+.board-item{
+    position: relative;
+    // float: left;
+    color: white;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(0,0,0,0.12);
+    width: 260px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+    white-space: normal;
+    box-sizing: border-box;
+    // padding: 3px;
+}
+
+.board-item >a {
+  height:100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.board-item >a:hover {
+  background-color: rgba(0,0,0,0.27);
+  text-decoration: none
+}

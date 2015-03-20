@@ -30,6 +30,11 @@ module Api
 
     private
 
+    def show
+      @list = List.find(params[:id])
+      render :show
+    end
+
     def current_board
       if params[:id]
         @list = List.find(params[:id])

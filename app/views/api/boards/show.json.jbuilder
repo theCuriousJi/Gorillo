@@ -4,4 +4,4 @@
 #    - the cards for each list
 json.extract! @board, :title
 
-json.lists @board.lists, :title, :board_id, :ord
+json.lists @board.lists, :id, :title, :board_id, :ord

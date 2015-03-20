@@ -6,6 +6,7 @@ TrelloClone.Views.BoardIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addBoard);
     this.listenTo(this.collection, 'remove', this.removeBoard)
+    this.$el.addClass('board-index')
     // We listen to an add event
     // when we fetch in the router, the first time, the collection is empty
     // but when the fetch completes, a bunch of add events will occur, so
@@ -33,7 +34,7 @@ TrelloClone.Views.BoardIndex = Backbone.CompositeView.extend({
   addBoard:  function (board) {
     var view = new TrelloClone.Views.BoardIndexItem({model: board});
     view.$el.addClass('board-item')
-    this.addSubview('.boards', view);
+    this.addSubview('.board-list', view);
 
   },
 
