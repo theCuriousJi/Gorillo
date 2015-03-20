@@ -5,6 +5,7 @@
 
 .board-list{
     display: inline-block;
+    vertical-align: top
 }
 
 .board-item{
@@ -36,4 +37,9 @@
 .board-item >a:hover {
   background-color: rgba(0,0,0,0.27);
   text-decoration: none
+}
+
+#new-board{
+  display: inline-block;
+  vertical-align: top;
 }

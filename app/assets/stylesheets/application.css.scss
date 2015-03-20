@@ -19,21 +19,38 @@ body{
   background-color: rgb(14, 116, 175)
 }
 
+#main{
+  margin-left:5px
+}
+
+.submit{
+  background: linear-gradient(to bottom, #70b500 0, #64a200 100%);
+  color: #fff;
+  font-weight: 700;
+  width: auto;
+  margin: 5px;
+  border:none;
+  box-shadow: 0 1px 0 #4d4d4d;
+  border-radius: 5px;
+  padding: 5px 20px
+
+}
+
 ul{
   list-style: none;
   padding: 0;
   margin: 0
 }
 
-.list{
-  float: left;
-  color: black;
-  background-color: #e2e4e6;
-  margin: 20px;
-  font-size: 20px;
-  box-sizing: border-box;
-  padding: 3px;
-  border-radius: 5px;
+.glyphicon-remove{
+  color: #7D8083;
+  font-size: 25px
+}
+
+
+.glyphicon-remove:hover{
+  color: #212427;
+  cursor: pointer;
 }
 
 .board-item > button {

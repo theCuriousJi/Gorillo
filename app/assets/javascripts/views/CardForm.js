@@ -1,9 +1,31 @@
 TrelloClone.Views.CardForm = Backbone.View.extend({
-  template: JST['cards/card-form'],
+  template: JST['cards/card-form-hidden'],
+  visibleTemplate: JST['cards/card-form'],
   tagName: 'form',
 
+  initialize: function () {
+    this.hidden = true;
+    // this.$el.addClass('hidden-form')
+  },
+
   events: {
-    "submit": "createCard"
+    "submit": "createCard",
+    "click .hidden-form": "showForm",
+    "click .glyphicon-remove": "removeForm"
+  },
+
+  showForm: function () {
+    this.hidden = false;
+    // $('.hidden-form').toggle();
+    this.render();
+  },
+
+  removeForm: function () {
+    // $('.hidden-form').toggle();
+    this.hidden = true;
+    // $('.shown-form').toggle();
+    this.render();
+
   },
 
   createCard: function (event) {
@@ -16,15 +38,20 @@ TrelloClone.Views.CardForm = Backbone.View.extend({
     newCard.save({}, {
       success: function () {
         that.collection.add(newCard);
-        that.$('title').val("");
-
+        that.$('textarea').val("");
+        that.hidden = true;
+        that.render();
       }
     })
 
   },
 
   render: function () {
-    var content = this.template({list: this.model});
+    if(this.hidden){
+      var content = this.template({list: this.model});
+    }  else {
+      var content = this.visibleTemplate({list: this.model});
+    }
     this.$el.html(content);
     return this;
 
