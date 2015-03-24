@@ -38,7 +38,9 @@ body{
   border:none;
   box-shadow: 0 1px 0 #4d4d4d;
   border-radius: 5px;
-  padding: 5px 20px
+  padding: 5px 20px;
+  font-size:12px;
+  float:left
 }
 
 .delete{
@@ -51,7 +53,7 @@ body{
   box-shadow: 0 1px 0 #4d4d4d;
   border-radius: 5px;
   padding: 5px 20px;
-  float: right
+  font-size: 12px
 }
 
 ul{
@@ -62,13 +64,17 @@ ul{
 
 .glyphicon-remove{
   color: #7D8083;
-  font-size: 25px
+  font-size: 25px;
+  float:right;
+  margin-top: 5px
+
 }
 
 
 .glyphicon-remove:hover{
   color: #212427;
   cursor: pointer;
+  float:right;
 }
 
 .board-item > button {

@@ -32,6 +32,10 @@
   font-weight: bold
 }
 
+.list-header:hover .options{
+  color:black;
+  cursor:pointer
+}
 
 #lists, .list-form {
   display: inline-block;

@@ -1,14 +1,20 @@
 .card{
   background-color: rgba(255,255,255, 0.81);
-  border-bottom: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 7px;
-  // cursor: pointer;
   margin-bottom: 7px;
   max-width: 300px;
   min-height: 20px;
   position: relative;
   z-index: 0;
+}
+
+.card:hover{
+  cursor:pointer;
+}
+
+.card:hover .edit{
+  color:black
 }
 
 .cards{
@@ -36,6 +42,7 @@ textarea {
   width: 100%;
   padding: 5px;
   border-radius: 3px;
+  font-size:12px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -52,6 +59,7 @@ textarea {
 float:right;
 margin-right: 5px;
 margin-top: 4px;
+font-size:14px;
 // display: none
 color:rgba(255,255,255, 0.81)
 }

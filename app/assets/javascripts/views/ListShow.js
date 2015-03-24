@@ -5,7 +5,11 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     "click .options": 'showOptions',
     "click .glyphicon-remove": 'removeOptions',
     "click .delete": "deleteList",
-    "click .save": "updateList"
+    "click .save": "updateList",
+    // "sortstart .cards": "cardDrag",
+    // "sortstop .cards": "cardDrop",
+    "sortstop": "saveOrds",
+    // "sortupdate": "receiveCard"
   },
 
   initialize: function () {
@@ -18,13 +22,37 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var that = this;
   },
 
-  check: function () {
-    console.log('hey');
-  },
-
   deleteList: function (event) {
     this.model.destroy();
   },
+
+  // receiveCard: function(event,ui){
+  //     debugger
+  //     var that = this;
+  //     var id = ui.item.data("card-id");
+  //     var $ul = this.$el.find('.list-header')
+  //     var listId = $ul.data("list-id");
+  //     var cards = this.cards;
+  //     var that = this;
+  //     if (!cards.get(id)) {
+  //       var card = new TrelloClone.Models.Card();
+  //       card.set({
+  //         id: id,
+  //         list_id: listId
+  //       });
+  //       card.save([], {
+  //         success: function () {
+  //           cards.add(card, { silent: true });
+  //           TrelloClone.Utils.SaveOrder($ul, cards, card);
+  //         }
+  //       });
+  //     } else {
+  //       TrelloClone.Utils.SaveOrder($ul, cards);
+  //     }
+  //
+  //     event.stopPropagation();
+  //   // console.log('asdfasdfds');
+  // },
 
   updateList: function (event) {
     event.preventDefault();
@@ -33,10 +61,48 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.model.save(data, {
     success: function () {
       that.removeOptions()
-    }
-  });
-
+      }
+    });
   },
+
+  resortSubviews: function() {
+      var subviews = this.subviews(".cards");
+      subviews.sort(function(subview1, subview2) {
+      return subview1.model.get('ord') - subview2.model.get('ord');
+    });
+  },
+
+  // saveOrder = function ($ul, collection, newModel) {
+  // if (collection.length > 0) {
+  //   var i = 1;
+  //   $ul.children().each(function (index, li) {
+  //     var $li = $(li);
+  //     var id = $li.data("id");
+  //     var model = collection.get(id) || newModel;
+  //     model.set("ord", i);
+  //     $li.attr("data-ord", i)
+  //     model.save([]);
+  //     i++;
+  //     });
+  //   }
+  // };
+
+
+  saveOrds: function () {
+    var cardElements = this.$('.card');
+    cardElements.each(function (index, element) {
+      var cardId = $(element).data('card-id');
+      var card = this.cards.get(cardId);
+      if(card.ord === index){
+        return;
+      }
+      card.save({ord: index });
+    }.bind(this));
+
+    this.cards.sort();
+    this.resortSubviews();
+  },
+
 
   showOptions: function () {
     this.opts = true;
@@ -92,7 +158,16 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.renderCards();
 
     return this;
+  },
+
+  cardDrag: function (event, ui) {
+    ui.item.addClass("dragged");
+    ui.placeholder.height(ui.helper.height());
+    event.stopPropagation();
+  },
+
+  cardDrop: function (event, ui) {
+    ui.item.removeClass("dragged");
+    event.stopPropagation();
   }
-
-
 })

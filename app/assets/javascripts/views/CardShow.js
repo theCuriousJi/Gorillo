@@ -2,11 +2,11 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
 
   template: JST['cards/show'],
   visibleTemplate: JST['cards/card-form-with-show'],
-  // tagName: 'li',
 
   initialize: function () {
     this.hidden = true
   },
+  className: "card",
 
   events: {
     'click .edit': "showForm",
