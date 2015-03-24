@@ -1,6 +1,6 @@
 TrelloClone.Views.BoardIndexItem = Backbone.View.extend({
   template: JST['boards/index-item'],
-  tagName: 'li',
+  tagName: 'div',
 
   events: {
     'click button.delete-board': 'removeBoard'

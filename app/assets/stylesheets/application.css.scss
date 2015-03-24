@@ -23,7 +23,13 @@ body{
   margin-left:5px
 }
 
-.submit{
+.title{
+  font-size: 18px;
+  padding-left: 6px;
+  font-weight: 700
+}
+
+.submit, .save{
   background: linear-gradient(to bottom, #70b500 0, #64a200 100%);
   color: #fff;
   font-weight: 700;
@@ -33,7 +39,19 @@ body{
   box-shadow: 0 1px 0 #4d4d4d;
   border-radius: 5px;
   padding: 5px 20px
+}
 
+.delete{
+  background: linear-gradient(to bottom, #B5001B 0, #A20025 100%);
+  color: #fff;
+  font-weight: 700;
+  width: auto;
+  margin: 5px;
+  border:none;
+  box-shadow: 0 1px 0 #4d4d4d;
+  border-radius: 5px;
+  padding: 5px 20px;
+  float: right
 }
 
 ul{

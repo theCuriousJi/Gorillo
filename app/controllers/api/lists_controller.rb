@@ -20,7 +20,6 @@ module Api
 
     def update
       @list = current_board.lists.find(params[:id])
-
       if @list.update_attributes(list_params)
         render json: @list
       else

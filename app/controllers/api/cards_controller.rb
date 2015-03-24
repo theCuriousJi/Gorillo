@@ -27,6 +27,12 @@ module Api
       end
     end
 
+    def destroy
+      @card = Card.find(params[:id])
+      @card.destroy
+      render json: 'destroyed'
+    end
+
     private
 
     def current_list
@@ -41,6 +47,8 @@ module Api
     def current_board
       current_list.board
     end
+
+
 
     def card_params
       params.require(:card).permit(:title, :list_id, :ord, :description)

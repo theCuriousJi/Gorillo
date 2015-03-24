@@ -1,8 +1,6 @@
-<h4> Create List </h4>
-
-<form >
-  <label >Title</label>
-  <input type="text" name="list[title]">
-  <input type="hidden" name="list[board_id]" value="<%= board.id %>">
-  <input type="submit" value="Submit">
-</form>
+<div class="shown-list-form">
+<input type="text" class="list-text-input" value="Add a list..." name="list[title]">
+<br>
+<input class="submit" type="submit" value="Submit">
+<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</div>
