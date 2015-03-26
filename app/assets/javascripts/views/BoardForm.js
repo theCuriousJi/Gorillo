@@ -12,8 +12,6 @@ TrelloClone.Views.BoardForm = Backbone.View.extend({
     "click .submit": 'createBoard',
     "click .glyphicon-remove": "removeForm",
     "click .hidden-board-form": "showForm"
-
-
   },
 
   showForm: function (event) {
@@ -49,7 +47,6 @@ TrelloClone.Views.BoardForm = Backbone.View.extend({
     } else{
       var content = this.template();
     }
-
     this.$el.html(content);
     return this;
   }

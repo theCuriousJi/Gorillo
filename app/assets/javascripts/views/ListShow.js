@@ -6,10 +6,9 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     "click .glyphicon-remove": 'removeOptions',
     "click .delete": "deleteList",
     "click .save": "updateList",
-    // "sortstart .cards": "cardDrag",
-    // "sortstop .cards": "cardDrop",
-    "sortstop": "saveOrds",
-    // "sortupdate": "receiveCard"
+    "sortstart .cards": "cardDrag",
+    "sortstop .cards": "cardDrop",
+    "sortreceive": "receiveCard"
   },
 
   initialize: function () {
@@ -26,33 +25,19 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.model.destroy();
   },
 
-  // receiveCard: function(event,ui){
-  //     debugger
-  //     var that = this;
-  //     var id = ui.item.data("card-id");
-  //     var $ul = this.$el.find('.list-header')
-  //     var listId = $ul.data("list-id");
-  //     var cards = this.cards;
-  //     var that = this;
-  //     if (!cards.get(id)) {
-  //       var card = new TrelloClone.Models.Card();
-  //       card.set({
-  //         id: id,
-  //         list_id: listId
-  //       });
-  //       card.save([], {
-  //         success: function () {
-  //           cards.add(card, { silent: true });
-  //           TrelloClone.Utils.SaveOrder($ul, cards, card);
-  //         }
-  //       });
-  //     } else {
-  //       TrelloClone.Utils.SaveOrder($ul, cards);
-  //     }
-  //
-  //     event.stopPropagation();
-  //   // console.log('asdfasdfds');
-  // },
+  receiveCard: function(event,ui){
+      var that = this;
+      var cardId = ui.item.data("card-id");
+      var newOrd = ui.item.index();
+      var card = new TrelloClone.Models.Card({
+        id: cardId,
+        list_id: this.model.id,
+        ord: newOrd
+      });
+      card.save({});
+      this.cards.add(card, {silent: true});
+      this.saveOrds(event);
+  },
 
   updateList: function (event) {
     event.preventDefault();
@@ -72,23 +57,8 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     });
   },
 
-  // saveOrder = function ($ul, collection, newModel) {
-  // if (collection.length > 0) {
-  //   var i = 1;
-  //   $ul.children().each(function (index, li) {
-  //     var $li = $(li);
-  //     var id = $li.data("id");
-  //     var model = collection.get(id) || newModel;
-  //     model.set("ord", i);
-  //     $li.attr("data-ord", i)
-  //     model.save([]);
-  //     i++;
-  //     });
-  //   }
-  // };
-
-
   saveOrds: function () {
+    event.stopPropagation();
     var cardElements = this.$('.card');
     cardElements.each(function (index, element) {
       var cardId = $(element).data('card-id');
@@ -169,5 +139,6 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   cardDrop: function (event, ui) {
     ui.item.removeClass("dragged");
     event.stopPropagation();
+    this.saveOrds();
   }
 })
