@@ -1,0 +1,1 @@
+TrelloClone::Application.config.secret_key_base = 'bab91813dd0c278f33201f0d5f2831c4695ab6bf4c49bac9533b6cb41e16916203e6c3caf366fbb4d6659e9dc38b396c2a9e105a20bbc89f0ce5879095feee7a' # replace this
