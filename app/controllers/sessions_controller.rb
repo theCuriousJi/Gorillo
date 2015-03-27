@@ -29,9 +29,9 @@ class SessionsController < ApplicationController
     b2 = Board.create(title: 'Example Board')
 
 
-    l1 = b1.lists.create(title: 'Basics')
-    l2 = b1.lists.create(title: 'Intermediate')
-    l3 = b1.lists.create(title: 'Advanced')
+    l1 = b1.lists.create(title: 'Basics', ord: 0)
+    l2 = b1.lists.create(title: 'Intermediate', ord:1)
+    l3 = b1.lists.create(title: 'Advanced', ord: 2)
 
 
 
@@ -39,15 +39,15 @@ class SessionsController < ApplicationController
     # c2 = l3.cards.create(title: 'pushups', description: 'ooh ouch')
     # c3 = l3.cards.create(title: 'situps', description: 'ouchy')
 
-    c4 = l1.cards.create(title: 'Welcome to Gorillo!')
-    c11 = l1.cards.create(title: "Create lists and cards to keep track of tasks and to-do's")
-    c5 = l1.cards.create(title: 'This is a card')
-    c6 = l3.cards.create(title: 'Click on the pencil icon to edit or delete a card or a list')
+    c4 = l1.cards.create(title: 'Welcome to Gorillo!', ord:0)
+    c11 = l1.cards.create(title: "Create lists and cards to keep track of tasks and to-do's", ord:1)
+    c5 = l1.cards.create(title: 'This is a card', ord:2)
+    c6 = l3.cards.create(title: 'Click on the pencil icon to edit or delete a card or a list', ord:0)
     #
-    c7 = l2.cards.create(title: 'Use as many lists as you want')
-    c8 = l2.cards.create(title: 'You can click and drag lists to rearrange them')
-    c9 = l2.cards.create(title: 'Or click and drag cards to rearrange them')
-    c10 = l2.cards.create(title: 'Try dragging cards anywhere')
+    c7 = l2.cards.create(title: 'Use as many lists as you want', ord:0)
+    c8 = l2.cards.create(title: 'You can click and drag lists to rearrange them', ord:1)
+    c9 = l2.cards.create(title: 'Or click and drag cards to rearrange them', ord:2)
+    c10 = l2.cards.create(title: 'Try dragging cards anywhere', ord:3)
 
     # i1 = c1.items.create(done: false, title: 'mocha')
     # i2 = c1.items.create(done: true, title: 'mocha')
