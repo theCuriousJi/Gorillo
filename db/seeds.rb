@@ -1,4 +1,4 @@
-u1 = User.create(email: 'guest@gmail.com', password: '123123')
+User.create!(email: 'guest@gmail.com', password: '123123')
 
 # b1 = u1.boards.create(title: 'Workout')
 # b2 = u1.boards.create(title: 'Jamaica')
