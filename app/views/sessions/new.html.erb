@@ -10,7 +10,7 @@
     <label>Password<br>
       <input id="password" name="user[password]" type="password"><br>
     </label><br>
-    <input type="submit" value="Sign In" class="button"><br>
+    <input id="sign-in" type="submit" value="Sign In" class="button">
     <button id="tour" class="button" type="button" name="button">Take a Tour</button>
 
   </form>
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<script charset="utf-8">$('#tour').on('click', function() {
-  <script charset="utf-8"> $('#user').val('guest@gmail.com') </script>
-  <script charset="utf-8">$('#password').val('123123')</script>
-})</script>
+<script>$('#tour').on('click', function() {
+  $('#user').val('guest@gmail.com');
+  $('#password').val('123123');
+  $('#sign-in').click(); })</script>

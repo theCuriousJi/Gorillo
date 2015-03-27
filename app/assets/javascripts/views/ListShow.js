@@ -41,7 +41,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
 
   updateList: function (event) {
     event.preventDefault();
-    var data = $('.list-edit').serializeJSON()
+    var data = $('.list-text-edit').serializeJSON()
     var that = this;
     this.model.save(data, {
     success: function () {

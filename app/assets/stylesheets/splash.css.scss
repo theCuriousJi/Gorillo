@@ -21,13 +21,26 @@
   font-family: 'Slackey', cursive;
 }
 
+#tour {
+  background-color: #DBD3B2;
+  color: black;
+}
+
+#sign-in{
+  margin-right:30px
+}
+
+.alert{
+  margin-bottom: 0px
+}
+
 
 .button{
   border-radius: 5px;
   float:left;
   margin-left: -21px;
   margin-top:10px;
-  width: 200px;
+  width: 100px;
   background-color: #545145
 }
 
