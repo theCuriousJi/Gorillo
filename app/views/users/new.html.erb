@@ -1,20 +1,16 @@
 <div class="background">
 <div class="splash-box">
   <div class="logo">Gorillo</div>
-  
-<h1>Sign Up</h1>
 
-
-
-<form action="/users" method="post">
+<form class="splash-form" action="/users" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label>Email<br>
-    <input name="user[email]" type="text"><br>
+    <input id="user" name="user[email]" type="text"><br>
   </label><br>
   <label>Password<br>
-    <input name="user[password]" type="password"><br>
+    <input id="password"name="user[password]" type="password"><br>
   </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <input id="sign-up" type="submit" value="Sign Up" class="button"><br>
 </form>
 </div>
 </div>
