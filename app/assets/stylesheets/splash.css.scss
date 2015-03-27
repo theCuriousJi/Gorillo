@@ -1,0 +1,41 @@
+.splash-box{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -180px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #A19153;
+  color: #DBD3B2
+}
+
+.logo{
+  position: absolute;
+  width: 260px;
+  margin-top: -60px;
+  text-align: center;
+  color: #FFF;
+  font-size: 30px;
+  font-family: 'Slackey', cursive;
+}
+
+
+.button{
+  border-radius: 5px;
+  float:left;
+  margin-left: -21px;
+  margin-top:10px;
+  width: 200px;
+  background-color: #545145
+}
+
+.splash-form{
+  margin-left: 53px;
+}
+
+form label{
+  text-align:center;
+  color: #545145
+}

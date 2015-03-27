@@ -1,12 +1,24 @@
-<h1>Sign In</h1>
+<div class="background">
+<div class="splash-box">
+  <div class="logo">Gorillo</div>
 
-<form action="/session" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Email<br>
-    <input name="user[email]" type="text"><br>
-  </label><br>
-  <label>Password<br>
-    <input name="user[password]" type="password"><br>
-  </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
-</form>
+  <form class="splash-form" action="/session" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Email<br>
+      <input id="user" name="user[email]" type="text"><br>
+    </label><br>
+    <label>Password<br>
+      <input id="password" name="user[password]" type="password"><br>
+    </label><br>
+    <input type="submit" value="Sign In" class="button"><br>
+    <button id="tour" class="button" type="button" name="button">Take a Tour</button>
+
+  </form>
+
+  </div>
+</div>
+
+<script charset="utf-8">$('#tour').on('click', function() {
+  <script charset="utf-8"> $('#user').val('guest@gmail.com') </script>
+  <script charset="utf-8">$('#password').val('123123')</script>
+})</script>

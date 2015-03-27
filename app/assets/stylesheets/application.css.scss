@@ -16,9 +16,25 @@
 @import "bootstrap";
 @import "font-awesome";
 body{
-  background-color: rgb(14, 116, 175)
+  background-color: rgb(14, 116, 175);
+  background-color: #D4BF6D
 }
 
+.background{
+background-image: url("/gorillo-background.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+// max-width:1920px;
+height:1500px
+}
+
+#bs-example-navbar-collapse-1 > ul > li > a{
+  color:white
+}
+
+.navbar{
+  margin-bottom: 0px
+}
 #main{
   margin-left:5px
 }
@@ -94,6 +110,19 @@ ul{
 a{
   font-size: 16px;
   color: black
+}
+
+.navbar-header{
+    width:200px;
+    padding-right:5px
+}
+
+.navbar-brand{
+  font-family: 'Slackey', cursive;
+}
+
+nav img{
+  margin-top:6px
 }
 
 .clearfix {
