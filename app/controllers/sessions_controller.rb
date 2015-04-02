@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
   def generate_guest_data(user)
     # user.boards.delete_all
     Board.delete_all("user_id=1")
-    b1 = user.boards.create(title: 'Welcome Board')
+    b1 = user.boards.create(title: 'Welcome Board. Click Here!')
     b2 = Board.create(title: 'Example Board')
 
 
@@ -41,10 +41,10 @@ class SessionsController < ApplicationController
 
     c4 = l1.cards.create(title: 'Welcome to Gorillo!', ord:0)
     c11 = l1.cards.create(title: "Create lists and cards to keep track of tasks and to-do's", ord:1)
-    c5 = l1.cards.create(title: 'This is a card', ord:2)
+    c5 = l1.cards.create(title: 'Use as many lists as you want', ord:2)
     c6 = l3.cards.create(title: 'Click on the pencil icon to edit or delete a card or a list', ord:0)
     #
-    c7 = l2.cards.create(title: 'Use as many lists as you want', ord:0)
+    c7 = l2.cards.create(title: 'This is a card', ord:0)
     c8 = l2.cards.create(title: 'You can click and drag lists to rearrange them', ord:1)
     c9 = l2.cards.create(title: 'Or click and drag cards to rearrange them', ord:2)
     c10 = l2.cards.create(title: 'Try dragging cards anywhere', ord:3)
